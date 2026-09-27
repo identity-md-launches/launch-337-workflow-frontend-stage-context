@@ -1,0 +1,131 @@
+{
+  "result": "pass",
+  "date": "2026-09-27T06:28:55.026Z",
+  "browser": "141.0.7390.37",
+  "previewPath": "/preview/",
+  "mocked": true,
+  "liveBrowser": {
+    "result": "pass",
+    "label": "Block 11,791,540 · interpolated between blocks"
+  },
+  "contrast": [
+    {
+      "selector": ".clock-column .small-text",
+      "foreground": "rgb(95, 98, 89)",
+      "background": "rgb(248, 231, 206)",
+      "ratio": 5.125336142081464
+    },
+    {
+      "selector": ".primary",
+      "foreground": "rgb(255, 253, 247)",
+      "background": "rgb(182, 63, 34)",
+      "ratio": 5.545134903453245
+    },
+    {
+      "selector": ".lede",
+      "foreground": "rgb(95, 98, 89)",
+      "background": "rgb(248, 245, 237)",
+      "ratio": 5.706239292632369
+    },
+    {
+      "selector": ".donation h2",
+      "foreground": "rgb(41, 45, 41)",
+      "background": "rgb(255, 253, 247)",
+      "ratio": 13.74827508676402
+    }
+  ],
+  "realTransactions": 0,
+  "checks": [
+    {
+      "name": "Disconnected public reads and pool-filtered event activity",
+      "result": "pass"
+    },
+    {
+      "name": "Keyboard navigation, visible focus capture and wallet connection",
+      "result": "pass"
+    },
+    {
+      "name": "Desktop axe WCAG automated scan",
+      "result": "pass"
+    },
+    {
+      "name": "768, 390 and 320 pixel reflow; mobile accessibility scan",
+      "result": "pass"
+    },
+    {
+      "name": "200% text enlargement without horizontal overflow",
+      "result": "pass"
+    },
+    {
+      "name": "Donation review, cancellation and simulation failure prevent signing",
+      "result": "pass"
+    },
+    {
+      "name": "Donation wallet rejection, success receipt and zero-accrual refresh",
+      "result": "pass"
+    },
+    {
+      "name": "Invalid amount produces a linked, focused field error",
+      "result": "pass"
+    },
+    {
+      "name": "Native buy quote, minimum, router simulation, receipt and no approvals",
+      "result": "pass"
+    },
+    {
+      "name": "Token sale requires explicit bounded token and Permit2 router approvals",
+      "result": "pass"
+    },
+    {
+      "name": "Changed swap input invalidates the quote",
+      "result": "pass"
+    },
+    {
+      "name": "Expired quotes cannot submit",
+      "result": "pass"
+    },
+    {
+      "name": "Wrong network gates actions, adds the exact unknown chain and switches again",
+      "result": "pass"
+    },
+    {
+      "name": "Missing wallet and empty event state",
+      "result": "pass"
+    },
+    {
+      "name": "No-liquidity donation guard",
+      "result": "pass"
+    },
+    {
+      "name": "Missing deployed code fails closed",
+      "result": "pass"
+    },
+    {
+      "name": "RPC failure and explicit refresh recovery",
+      "result": "pass"
+    },
+    {
+      "name": "Slow sequential RPC reads complete without overlapping polling starvation",
+      "result": "pass"
+    },
+    {
+      "name": "Tampered ABI prevents application startup",
+      "result": "pass"
+    },
+    {
+      "name": "No uncaught page exceptions or failed static resources",
+      "result": "pass"
+    }
+  ],
+  "consoleErrors": [],
+  "resourceFailures": [],
+  "axe": {
+    "desktopViolations": 0,
+    "mobileViolations": 0
+  },
+  "limitations": [
+    "Mocked RPC and injected wallet; no funded live-chain transactions",
+    "No physical-device, native browser zoom or screen-reader session",
+    "Supplied browser MCP transport was closed; local Playwright used"
+  ]
+}

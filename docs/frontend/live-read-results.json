@@ -1,0 +1,27 @@
+{
+  "date": "2026-09-27T06:20:13.529Z",
+  "readOnly": true,
+  "realTransactions": 0,
+  "results": [
+    {
+      "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
+      "result": "pass",
+      "snapshot": {
+        "block": "11791497",
+        "timestamp": 1790490012,
+        "received": 1511.806734,
+        "fee": 100,
+        "happy": false,
+        "seconds": 34788,
+        "accrued0": "0",
+        "accrued1": "0",
+        "liquidity": "0",
+        "price": "560227709747861399187319382274582",
+        "decimals": 18,
+        "symbol": "HAPY",
+        "balance0": "0",
+        "balance1": "0"
+      }
+    }
+  ]
+}

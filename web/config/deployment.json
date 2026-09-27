@@ -1,0 +1,53 @@
+{
+  "chainId": 11155111,
+  "repoUrl": "https://github.com/identity-md-launches/launch-237-happyhourhook",
+  "version": 1,
+  "launchId": "f61dea12-1936-4851-8e83-ff37328e996d",
+  "manifest": {
+    "hook": {
+      "contract": "HappyHourHook",
+      "permissions": [
+        "afterSwap",
+        "afterSwapReturnDelta"
+      ],
+      "constructorArgs": [
+        "0xE03A1074c86CFeDd5C142C4F04F1a1536e203543"
+      ]
+    },
+    "kind": "univ4_hook",
+    "pool": {
+      "fee": 3000,
+      "tickSpacing": 60,
+      "initialPrice": "78588986356927097284479352776873",
+      "pairedCurrency": "0x0000000000000000000000000000000000000000"
+    },
+    "notes": "Technical description of src/HappyHourHook.sol:HappyHourHook and src/LaunchToken.sol:LaunchToken; ABI arrays are in docs/abi/HappyHourHook.json and docs/abi/LaunchToken.json. The hook takes only the literal Sepolia PoolManager address listed above; the token takes no constructor arguments. The hook constructor validates permission bits 0x0044 under mask 0x3fff; the factory mines the CREATE2 salt. All other permissions are false. The pool is native ETH as currency0 and HAPY as currency1, with a static 0.3% LP fee. initialPrice is decimal sqrtPriceX96 = TickMath.getSqrtPriceAtTick(138000), matching test/BaseHookTest.sol; it encodes sqrt(currency1/currency0) * 2^96. The harness seeds HAPY-only liquidity below that starting tick and exercises first buys with no preexisting ETH. The hook charges floor(abs(unspecified swap delta) * bps / 10000): 10 bps during [16:00:00, 17:00:00) UTC, otherwise 100 bps, separate from the LP fee. It returns a positive unspecified delta, reducing exact-input output or increasing exact-output input, and settles by minting ERC-6909 claims to itself. Accrual is keyed by PoolId and currency; pools with non-native currency0 receive zero hook delta and no accrual. Callbacks accept only the PoolManager. Permissionless donateFees clears accrual, unlocks the manager, burns claims and donates both currencies to in-range LPs; no donation or ETH transfer occurs during swaps. Empty accrual reverts; no in-range liquidity reverts atomically and preserves accrual and claims. Liquidity added immediately before donation shares earlier fees (JIT capture). A few seconds of timestamp skew at hour boundaries is accepted. Neither sender nor unauthenticated hookData earns a separate credit. This manifest describes the implementation and pool inputs; launch policy and signed artifact linkage belong to services. Independent review, publication, attestation, admission, deployment and the live frontend are separate workflow steps, not outcomes asserted here.",
+    "token": {
+      "name": "Happy Hour",
+      "symbol": "HAPY",
+      "contract": "LaunchToken",
+      "decimals": 18
+    }
+  },
+  "contracts": [
+    {
+      "name": "LaunchToken",
+      "txHash": "0x644309a01a784c30c0fe069cc8cff30eb36fea980b443f3bec64ab1c0ca8f3e0",
+      "abiHash": "f36d2fe28b62f817a4fba0b78bb501b41895eada3982280273c063ad8183f577",
+      "address": "0xd99b05f7a322d7c11a358416fcd0279bfa7adc02",
+      "blockNumber": 11791338,
+      "creationCodeHash": "c46849511c891799496c7b547013a2348a0319ffc0296c2c0dffa22836cf28a5"
+    },
+    {
+      "name": "HappyHourHook",
+      "txHash": "0x644309a01a784c30c0fe069cc8cff30eb36fea980b443f3bec64ab1c0ca8f3e0",
+      "abiHash": "3f3f2df52073a13bf2ab6d3befa4d3ca9497e5b8e6a743bb02285f155ae67b51",
+      "address": "0x9e7c7e63ea43b631fc7c756552468043f0b44044",
+      "blockNumber": 11791338,
+      "creationCodeHash": "e123ca868aa51dc53dbf6ec0eb7a620591e3755fdb97a6f7d897361ae3ac5685"
+    }
+  ],
+  "sourceCommit": "af9fc67005a96c6b19fa60c756943e3743bffeac",
+  "abiInstructions": "Build ABIs from this exact source commit; compare canonicalKeccak(abi) with abiHash. Verify deployed code on the stated chain before enabling transactions.",
+  "attestationHash": "5d332496c577fbe5b23f1d05f068d62e2ff19345dd4e38b392081b1d4f1e6115"
+}

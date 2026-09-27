@@ -1,0 +1,29 @@
+{
+  "result": "pass",
+  "deployedSourceCommit": "af9fc67005a96c6b19fa60c756943e3743bffeac",
+  "exportAssets": 6,
+  "exportFilesIncludingManifest": 7,
+  "exportBytes": 663474,
+  "largestAssetBytes": 612323,
+  "sha256Inventory": "all exported bytes match",
+  "handoffBinding": "identifiers, exact contract set, network and walletAddChain match supplied inputs",
+  "originalTrackedFilesChanged": [],
+  "allowedSubmissionPaths": [
+    "web/**",
+    "web/.gitignore",
+    "dist/**",
+    "docs/**"
+  ],
+  "designDocumentation": "docs/DESIGN.md (root file excluded by overriding scope)",
+  "bundleLimitBytes": 8388608,
+  "realTransactionsBroadcast": 0,
+  "workspaceCommit": "blocked: .git/index.lock cannot be created on the read-only workspace Git filesystem",
+  "prospectiveCompleteBundle": {
+    "result": "pass",
+    "sizeBelowBytes": 1500000,
+    "limitBytes": 8388608,
+    "method": "git bundle create --all in a disposable staging checkout; verify and clean clone restore",
+    "workspaceCommitCreated": false,
+    "historicalObjects": "Two missing ancestor blobs were fetched from the public handoff repository and restored by exact Git object hash in the disposable checkout only."
+  }
+}
